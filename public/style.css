@@ -1,0 +1,444 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    padding: 30px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 24px;
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: 600;
+}
+
+h2 {
+    color: #34495e;
+    margin: 20px 0;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Input Section */
+.input-section {
+    margin-bottom: 30px;
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 200px;
+    transition: border-color 0.2s ease;
+    background-color: #fff;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button styles */
+button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Table styles */
+.results-section, .aka-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+
+/* RT URL Fetcher Section (No changes) */
+.rt-url-fetcher {
+    /* Keep the styles as is */
+    font-family: 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+/* Highlight styles */
+.aka-ms-highlight {
+    background-color: #dbeafe;
+    border-left: 4px solid #3b82f6;
+    padding-left: 12px;
+}
+
+.query-prod-highlight {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding-left: 12px;
+}
+
+/* Error styles */
+.error-row {
+    background-color: #fef2f2;
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.9em;
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #fee2e2;
+    border-radius: 4px;
+}
+
+.error-text {
+    color: #dc2626;
+    font-weight: 500;
+}
+
+/* Spinner styles */
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.spinner-inner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    th, td {
+        padding: 12px 8px;
+    }
+
+    .url-cell {
+        font-size: 12px;
+    }
+}
+
+/* Inner table styles */
+.inner-table {
+    margin: 0;
+    border: none;
+}
+
+.inner-table td {
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 8px;
+}
+
+.inner-table tr:last-child td {
+    border-bottom: none;
+}
+.summary-text {
+    font-size: 0.9em;
+}
+
+.success-text {
+    color: #059669;
+    font-weight: 600;
+}
+
+.error-text {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.broken-link-container {
+    margin: 8px 0;
+    padding: 8px;
+    background: #f9fafb;
+    border-radius: 6px;
+}
+
+.broken-url {
+    color: #dc2626;
+    word-break: break-all;
+}
+
+.redirect-info {
+    margin-top: 4px;
+    margin-left: 16px;
+    font-size: 0.9em;
+    color: #4b5563;
+    word-break: break-all;
+}
+
+.status-cell {
+    padding: 6px 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.connection-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.server-error {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.client-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.redirect {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Add these styles to your CSS */
+.broken-link-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.broken-link-item:last-child {
+    border-bottom: none;
+}
+
+.url-cell {
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.redirect-chain {
+    margin-left: 20px;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 4px;
+}
+
+.status-code {
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 4px 0;
+    font-weight: 500;
+}
+
+.connection-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.server-error {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.client-error {
+    background-color: #fff1f2;
+    color: #be123c;
+}
+
+.redirect {
+    background-color: #fff7ed;
+    color: #c2410c;
+}
+
+.success-message {
+    color: #059669;
+    font-weight: 500;
+}
+
+.summary-text {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 4px;
+}
+
+.error-text {
+    color: #dc2626;
+}
+
+.inner-link {
+    margin-left: 20px;
+    border-left: 3px solid #eee;
+    padding-left: 10px;
+}
+
+.parent-url {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Ensures the table layout remains fixed and consistent */
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* Applies consistent padding and border */
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* Wraps long URLs to avoid overflowing */
+.url-cell {
+    word-break: break-all;
+}
+
+/* Styles for error messages */
+.error-message, .status-code {
+    color: #d9534f; /* Red for errors */
+    font-weight: bold;
+}
+
+/* Additional styling for alternating row colors if needed */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.url-cell {
+    word-break: break-all;
+    padding: 5px;
+}
+
+.broken-link-item {
+    margin-bottom: 5px;
+}
+
+.status-code {
+    color: #d9534f; /* Red for error */
+    font-weight: bold;
+}
+
+.success-message {
+    color: #5cb85c; /* Green for success */
+}
+
+.error-message {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.summary-text {
+    font-weight: bold;
+    color: #333;
+}
+.status-code-404 {
+    background-color: #7f1d1d; /* Dark red background */
+    color: #ffffff; /* White text color */
+}
